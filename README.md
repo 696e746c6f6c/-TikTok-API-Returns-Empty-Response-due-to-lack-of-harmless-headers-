@@ -9,7 +9,7 @@ https://github.com/davidteather/TikTok-Api/issues/974
 
 But why does it return empty response without these harmless parameters: `msToken, signature and X-bogus` parameters.
 
-The main reason for this is because of using `XHR()` API and communicating with REST API with the server. 
+The main reason for this is because of using `XHR()` API and communicating with REST API with the server. However fun fact is they use GraphQL queries and mutations in a REST way! Weird isn't it? And they don't support any API version as well.
 
 Let's consider this pseudo code I have written:
 ```javascript
