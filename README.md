@@ -1,4 +1,4 @@
-# TikTok-Returns-Empty-Response-due-to-lack-of-harmless-headers-issue-resolved-by-me.
+# TikTok API Returns Empty Response due to lack of harmless headers .
 Hi,
 
 In these repos you can see people complaining about this behaviour:
