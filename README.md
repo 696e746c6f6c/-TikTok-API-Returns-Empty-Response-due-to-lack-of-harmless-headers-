@@ -9,7 +9,7 @@ https://github.com/davidteather/TikTok-Api/issues/974
 
 But why does it return empty response without these harmless parameters: `msToken, signature and X-bogus` parameters.
 
-The main reason for this is because of using XHR() API and communicating with REST API with the server. 
+The main reason for this is because of using `XHR()` API and communicating with REST API with the server. 
 
 Let's consider this pseudo code I've wrote:
 ```javascript
@@ -46,7 +46,7 @@ xhr.send(JSON.stringify(requestBody));
 ```
 The pseudocode I provided is an example of how you will structure a client-side JavaScript code using XHR API to send a POST request to such API endpoint.
 
-`requestBody` object provides three properties. However missing value of any harmless POST or GET based parameter is going to return 200 OK empty response just like `HEAD` based request does.
+`requestBody` object provides three properties. However missing value of any harmless `POST` or `GET` based parameter is going to return 200 OK empty response just like `HEAD` based request does.
 
 However this happens with even harmless HTTP headers. So, here's my conclusion of why this actually happens, The server is actually performing strict parameters validation (they probably are doing this against such CSRF attacks which actually makes no sense as these parameters are global-wide on TikTok and are absolutely harmless, they don't come from cookies or anything, it's being generated but fun fact is they have no expiry time / long expiration time and it is being sent in URL which means it can be exposed.) , and if a required parameter like msToken is missing, it responds with a success status (200 OK) but does not provide a response body to indicate that the request was incomplete or incorrect.
 
@@ -62,6 +62,6 @@ Here's the little Node.js pseudo code of how it happens at the back-end when API
   }
 });
 ```
-So, overall if you come with this issue and you have a valid vulnerability, you should report the issue but it will be considered as `AC:H` because of this:
+**So, overall if you come with this issue and you have a valid vulnerability, you should report the issue but it will be considered as `AC:H` because of this**:
 
 > (they probably are doing this against such CSRF attacks which actually makes no sense as these parameters are global-wide on TikTok and are absolutely harmless, they don't come from cookies or anything, it's being generated but fun fact is they have no expiry time / long expiration time and it is being sent in URL which means it can be exposed.)
