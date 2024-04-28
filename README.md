@@ -52,7 +52,7 @@ The pseudocode I provided is an example of how you will structure a client-side 
 
 However this happens with even harmless HTTP headers. So, here's my conclusion of why this actually happens, The server is actually performing strict parameters validation (they probably are doing this against such CSRF attacks which actually makes no sense as these parameters are global-wide on TikTok and are absolutely harmless, they don't come from cookies or anything, it's being generated but fun fact is they have no expiry time / long expiration time and it is being sent in URL which means it can be exposed.) , and if a required parameter like msToken is missing, it responds with a success status (200 OK) but does not provide a response body to indicate that the request was incomplete or incorrect.
 
-Here's the little Node.js pseudo code of how it happens at the back-end when API starts the communication with the server:
+Here's the little JS pseudo code of how it happens at the back-end when API starts the communication with the server:
 ```javascript
 app.use(bodyParser.json());
 
