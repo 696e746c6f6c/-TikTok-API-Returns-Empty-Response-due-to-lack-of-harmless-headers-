@@ -11,7 +11,7 @@ But why does it return empty response without these harmless parameters: `msToke
 
 The main reason for this is because of using `XHR()` API and communicating with REST API with the server. 
 
-Let's consider this pseudo code I've wrote:
+Let's consider this pseudo code I have written:
 ```javascript
 // Create a new XHR object
 var xhr = new XMLHttpRequest();
