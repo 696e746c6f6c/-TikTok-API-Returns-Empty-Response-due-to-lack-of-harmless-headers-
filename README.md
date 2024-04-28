@@ -52,7 +52,14 @@ However this happens with even harmless HTTP headers. So, here's my conclusion o
 
 Here's the little Node.js pseudo code of how it happens at the back-end when API starts the communication with the server:
 ```javascript
- if (!requestBody.msToken) {
+app.use(bodyParser.json());
+
+app.post('/api/endpoint', (req, res) => {
+  const requestBody = req.body;
+
+  // Check if 'msToken' parameter is missing
+  // Further more, this applies only for this parameter, but it's same for other parameters as well
+  if (!requestBody.msToken) {
     // Respond with a 200 OK status and no response body
     return res.status(200).send();
   } else {
