@@ -1,6 +1,8 @@
 # TikTok API Returns Empty Response due to lack of harmless headers .
 Hi,
 
+I'm 696e746c6f6c from HackerOne! https://hackerone.com/696e746c6f6c
+
 In these repos you can see people complaining about this behaviour:
 
 https://github.com/davidteather/TikTok-Api/issues/1090
